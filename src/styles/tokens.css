@@ -13,11 +13,11 @@
   --color-text:           #1C1917;
   --color-text-secondary: #57534E;
   --color-border:         #D6D3D1;
-  --color-accent:         #2563EB;
-  --color-accent-hover:   #1D4ED8;
+  --color-accent:         #491A69; /* Royal Plum */
+  --color-accent-hover:   #3A1554;
 
   /* typography */
-  --font-display: system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-body:    system-ui, -apple-system, sans-serif;
 
   --text-sm:   0.875rem;

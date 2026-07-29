@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 
 <Base>
   <section class="hero">
-    <h1>Your Name</h1>
+    <h1>Tate Lee</h1>
     <p class="hero-line">One sentence about who you are and what you make. Replace me in Week 1.</p>
     <a href="/work/">See my work</a>
   </section>
@@ -16,8 +16,21 @@ import Base from '../layouts/Base.astro';
   }
 
   .hero h1 {
+    display: inline-block;
+    position: relative;
     font-size: var(--text-3xl);
     margin: 0 0 var(--space-md);
+  }
+
+  .hero h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--space-2xs);
+    background: var(--color-accent);
+    border-radius: var(--radius-sm);
   }
 
   .hero-line {
