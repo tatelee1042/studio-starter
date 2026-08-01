@@ -1,11 +1,24 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
+import cover from '../../assets/projects/first-project/cover-placeholder.svg';
+import process from '../../assets/projects/first-project/process-placeholder.svg';
 ---
 
 <Base title="First Project — Tate Lee">
   <article class="case-study">
     <h1>Project Title</h1>
     <p class="summary">One-paragraph summary: what this is and what it proves about you. Week 3 is when you fill this page with a real project.</p>
+
+    <figure class="case-figure">
+      <Image
+        src={cover}
+        alt="Cover placeholder — replace with your project's key visual"
+        width={1200}
+        height={675}
+        loading="eager"
+      />
+    </figure>
 
     <h2>Role &amp; Context</h2>
     <p>What was the assignment or situation? What part was yours?</p>
@@ -19,6 +32,16 @@ import Base from '../../layouts/Base.astro';
     <h2>Iteration</h2>
     <p>What changed between the first version and the final one? Process images go here.</p>
 
+    <figure class="case-figure">
+      <Image
+        src={process}
+        alt="Process-stage placeholder — replace with a capture of an early or working version"
+        width={1200}
+        height={800}
+        loading="lazy"
+      />
+    </figure>
+
     <h2>Outcome</h2>
     <p>Where it ended up, and what this project proves you can do.</p>
   </article>
@@ -27,6 +50,17 @@ import Base from '../../layouts/Base.astro';
 <style>
   .case-study {
     max-width: 42em;
+  }
+
+  .case-figure {
+    margin: var(--space-lg) 0 var(--space-xl);
+  }
+
+  .case-figure :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
   }
 
   .case-study h1 {

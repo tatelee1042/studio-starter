@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-01T02:41:03Z",
+  "title": "Design System: Tate Lee Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#050507",
+        "tonalRamp": ["oklch(15% 0.008 285)", "oklch(25% 0.008 285)", "oklch(35% 0.008 285)", "oklch(47% 0.008 285)", "oklch(59% 0.008 285)", "oklch(71% 0.008 285)", "oklch(83% 0.008 285)", "oklch(95% 0.008 285)"]
+      },
+      "electric-cyan": {
+        "role": "primary",
+        "displayName": "Electric Cyan",
+        "canonical": "#35D9FF",
+        "tonalRamp": ["oklch(15% 0.06 210)", "oklch(25% 0.09 210)", "oklch(35% 0.12 210)", "oklch(47% 0.15 210)", "oklch(59% 0.17 210)", "oklch(71% 0.16 210)", "oklch(83% 0.11 210)", "oklch(95% 0.03 210)"]
+      },
+      "transit-magenta": {
+        "role": "secondary",
+        "displayName": "Transit Magenta",
+        "canonical": "#FF4FB8",
+        "tonalRamp": ["oklch(15% 0.07 345)", "oklch(25% 0.11 345)", "oklch(35% 0.16 345)", "oklch(47% 0.21 345)", "oklch(59% 0.24 345)", "oklch(71% 0.21 345)", "oklch(83% 0.13 345)", "oklch(95% 0.04 345)"]
+      },
+      "signal-coral": {
+        "role": "tertiary",
+        "displayName": "Signal Coral",
+        "canonical": "#FF6B57",
+        "tonalRamp": ["oklch(15% 0.06 28)", "oklch(25% 0.1 28)", "oklch(35% 0.14 28)", "oklch(47% 0.18 28)", "oklch(59% 0.21 28)", "oklch(71% 0.18 28)", "oklch(83% 0.11 28)", "oklch(95% 0.03 28)"]
+      },
+      "deep-violet": {
+        "role": "tertiary",
+        "displayName": "Deep Violet",
+        "canonical": "#6246A8",
+        "tonalRamp": ["oklch(15% 0.05 295)", "oklch(25% 0.08 295)", "oklch(35% 0.11 295)", "oklch(47% 0.13 295)", "oklch(59% 0.14 295)", "oklch(71% 0.12 295)", "oklch(83% 0.08 295)", "oklch(95% 0.025 295)"]
+      },
+      "cloud-white": {
+        "role": "neutral",
+        "displayName": "Cloud White",
+        "canonical": "#F4F1FF",
+        "tonalRamp": ["oklch(15% 0.012 295)", "oklch(25% 0.012 295)", "oklch(35% 0.012 295)", "oklch(47% 0.012 295)", "oklch(59% 0.012 295)", "oklch(71% 0.012 295)", "oklch(83% 0.012 295)", "oklch(95% 0.012 295)"]
+      },
+      "cloud-dim": {
+        "role": "neutral",
+        "displayName": "Cloud Dim",
+        "canonical": "#B8B6C7",
+        "tonalRamp": ["oklch(15% 0.01 285)", "oklch(25% 0.01 285)", "oklch(35% 0.01 285)", "oklch(47% 0.01 285)", "oklch(59% 0.01 285)", "oklch(71% 0.01 285)", "oklch(83% 0.01 285)", "oklch(95% 0.01 285)"]
+      },
+      "night-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised",
+        "canonical": "#101329",
+        "tonalRamp": ["oklch(15% 0.025 275)", "oklch(25% 0.025 275)", "oklch(35% 0.025 275)", "oklch(47% 0.025 275)", "oklch(59% 0.025 275)", "oklch(71% 0.025 275)", "oklch(83% 0.025 275)", "oklch(95% 0.025 275)"]
+      },
+      "night-border": {
+        "role": "neutral",
+        "displayName": "Night Border",
+        "canonical": "#343750",
+        "tonalRamp": ["oklch(15% 0.022 275)", "oklch(25% 0.022 275)", "oklch(35% 0.022 275)", "oklch(47% 0.022 275)", "oklch(59% 0.022 275)", "oklch(71% 0.022 275)", "oklch(83% 0.022 275)", "oklch(95% 0.022 275)"]
+      },
+      "scanline": {
+        "role": "neutral",
+        "displayName": "Scanline",
+        "canonical": "#0D1024",
+        "tonalRamp": ["oklch(15% 0.022 275)", "oklch(25% 0.022 275)", "oklch(35% 0.022 275)", "oklch(47% 0.022 275)", "oklch(59% 0.022 275)", "oklch(71% 0.022 275)", "oklch(83% 0.022 275)", "oklch(95% 0.022 275)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Hero Display", "purpose": "Hero statements only." },
+      "headline": { "displayName": "Section Headline", "purpose": "Major homepage and closing headings." },
+      "title": { "displayName": "Evidence Title", "purpose": "Evidence items and content subheads." },
+      "body": { "displayName": "Body", "purpose": "Primary reading text up to 65ch." },
+      "label": { "displayName": "Action Label", "purpose": "Short uppercase actions and navigation." }
+    },
+    "shadows": [
+      { "name": "signal-glow", "value": "0 0 var(--space-md) var(--color-focus)", "purpose": "Small coral status node in the homepage closing action only." }
+    ],
+    "motion": [
+      { "name": "fast", "value": "160ms", "purpose": "Brief action and link feedback." },
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Exponential ease-out for interface feedback." }
+    ],
+    "breakpoints": [
+      { "name": "layout", "value": "48rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Outlined cyan action for the preferred recruiter route.",
+      "html": "<a class=\"ds-action-primary\" href=\"#\">EMAIL ME</a>",
+      "css": ".ds-action-primary { min-height: var(--space-xl); display: inline-flex; align-items: center; justify-content: center; padding: var(--space-sm) var(--space-lg); color: var(--color-action-primary); border: 1px solid var(--color-action-primary); border-radius: var(--radius-action); font: var(--weight-label) var(--text-sm)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out); } .ds-action-primary:hover, .ds-action-primary:focus-visible { color: var(--color-bg); background: var(--color-action-primary); outline: var(--focus-ring-width) solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "action-secondary",
+      "description": "Outlined magenta action for a meaningful alternate route.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#\">VIEW WORK</a>",
+      "css": ".ds-action-secondary { min-height: var(--space-xl); display: inline-flex; align-items: center; justify-content: center; padding: var(--space-sm) var(--space-lg); color: var(--color-action-secondary); border: 1px solid var(--color-action-secondary); border-radius: var(--radius-action); font: var(--weight-label) var(--text-sm)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out); } .ds-action-secondary:hover, .ds-action-secondary:focus-visible { color: var(--color-bg); background: var(--color-action-secondary); outline: var(--focus-ring-width) solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "description": "Compact cyan route label with a magenta directional arrow.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">READ ABOUT MY BACKGROUND <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-text-link { min-height: var(--space-xl); display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-accent); font: var(--weight-label) var(--text-sm)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; } .ds-text-link span { color: var(--color-action-secondary); transition: transform var(--duration-fast) var(--ease-out); } .ds-text-link:hover span, .ds-text-link:focus-visible span { transform: translateX(var(--space-2xs)); }"
+    },
+    {
+      "name": "Shared Navigation",
+      "kind": "nav",
+      "description": "Wordmark and recruiter routes with a cyan active rule.",
+      "html": "<nav class=\"ds-site-nav\"><a class=\"ds-wordmark\" href=\"#\">TATE LEE</a><div class=\"ds-nav-links\"><a aria-current=\"page\" href=\"#\">HOME</a><a href=\"#\">WORK</a><a href=\"#\">ABOUT</a></div></nav>",
+      "css": ".ds-site-nav { display: flex; justify-content: space-between; align-items: center; gap: var(--space-lg); } .ds-wordmark { font: var(--weight-display) var(--text-lg)/var(--leading-tight) var(--font-display); letter-spacing: var(--tracking-brand); text-decoration: none; } .ds-nav-links { display: flex; gap: var(--space-xl); } .ds-nav-links a { position: relative; min-height: var(--space-xl); display: inline-flex; align-items: center; color: var(--color-text); font: var(--weight-label) var(--text-xs)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); text-decoration: none; } .ds-nav-links a[aria-current=\"page\"]::after { content: \"\"; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--color-accent); }"
+    },
+    {
+      "name": "Evidence Item",
+      "kind": "custom",
+      "description": "A factual qualification with a numbered signal marker.",
+      "html": "<article class=\"ds-evidence\"><span>01</span><h3>ACCOUNTING FOCUS</h3><p>Studying business with a focus in accounting.</p></article>",
+      "css": ".ds-evidence { position: relative; display: grid; gap: var(--space-sm); padding: var(--space-lg) 0; border-top: 1px solid var(--color-border); } .ds-evidence::before { content: \"\"; position: absolute; top: -1px; left: 0; width: var(--space-xl); height: 1px; background: var(--color-accent); } .ds-evidence span { color: var(--color-accent); font: var(--weight-label) var(--text-xs)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); } .ds-evidence h3, .ds-evidence p { margin: 0; } .ds-evidence h3 { color: var(--color-text); font: var(--weight-display) var(--text-xl)/var(--leading-tight) var(--font-display); } .ds-evidence p { color: var(--color-text-secondary); font: var(--text-base)/var(--leading-normal) var(--font-body); }"
+    },
+    {
+      "name": "Closing Action",
+      "kind": "custom",
+      "refersTo": "closing-action",
+      "description": "Raised tonal conversion section with signal node and direct email action.",
+      "html": "<section class=\"ds-closing\"><span aria-hidden=\"true\"></span><div><h2>I’M SEEKING AN ACCOUNTING INTERNSHIP.</h2><p>If my background fits an opportunity on your team, I’d be glad to continue the conversation.</p></div><a href=\"mailto:tatelee2024@gmail.com\">EMAIL ME</a></section>",
+      "css": ".ds-closing { display: grid; gap: var(--space-lg); align-items: center; padding: var(--space-xl); background: var(--color-bg-subtle); border-block: 1px solid var(--color-border); } .ds-closing > span { width: var(--space-sm); height: var(--space-sm); border-radius: 50%; background: var(--color-focus); box-shadow: 0 0 var(--space-md) var(--color-focus); } .ds-closing h2, .ds-closing p { margin: 0; } .ds-closing h2 { color: var(--color-text); font: var(--weight-display) var(--text-section)/var(--leading-tight) var(--font-display); letter-spacing: var(--tracking-display); } .ds-closing p { color: var(--color-text-secondary); font: var(--text-base)/var(--leading-normal) var(--font-body); } .ds-closing a { min-height: var(--space-xl); display: inline-flex; align-items: center; justify-content: center; padding: var(--space-sm) var(--space-lg); color: var(--color-action-primary); border: 1px solid var(--color-action-primary); border-radius: var(--radius-action); font: var(--weight-label) var(--text-sm)/var(--leading-normal) var(--font-body); letter-spacing: var(--tracking-caps); text-decoration: none; }"
+    },
+    {
+      "name": "Shared Footer",
+      "kind": "nav",
+      "description": "Availability status, repeated navigation, and quiet ownership line.",
+      "html": "<footer class=\"ds-footer\"><div><p><span aria-hidden=\"true\"></span>Seeking an accounting internship</p><nav><a href=\"#\">HOME</a><a href=\"#\">WORK</a><a href=\"#\">ABOUT</a></nav></div><small>© 2026 Tate Lee</small></footer>",
+      "css": ".ds-footer { display: grid; gap: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); color: var(--color-text-secondary); font: var(--text-sm)/var(--leading-normal) var(--font-body); } .ds-footer > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-lg); } .ds-footer p { display: inline-flex; align-items: center; gap: var(--space-sm); margin: 0; color: var(--color-text); } .ds-footer p span { width: var(--space-xs); height: var(--space-xs); border-radius: 50%; background: var(--color-focus); } .ds-footer nav { display: flex; gap: var(--space-lg); } .ds-footer a { min-height: var(--space-xl); display: inline-flex; align-items: center; color: var(--color-text); font-weight: var(--weight-label); font-size: var(--text-xs); letter-spacing: var(--tracking-caps); text-decoration: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Neon Descent",
+    "overview": "Neon Descent is a dark, cosmic signal system built for a recruiter evaluating an accounting internship candidate. The page pairs an expansive NASA Crab Nebula composition with precise typography, generous negative space, thin route-like rules, and restrained neon accents. It should feel ambitious and personable while remaining direct enough to understand in ten seconds. The system is mobile-first and flat by default. A centered page frame, readable measures, divider-led sections, and a single 48rem layout transition keep evaluation effortless.",
+    "keyCharacteristics": [
+      "Dark edge-matched cosmic imagery beside direct recruiter copy.",
+      "Bricolage Grotesque display type paired with Atkinson Hyperlegible body type.",
+      "Fine cyan, magenta, coral, and violet signals on a near-black field.",
+      "Square, outlined actions with brief color inversion on interaction.",
+      "Flat sections separated by lines, spacing, and tonal shifts rather than cards.",
+      "Semantic HTML, visible focus, generous touch targets, and reduced-motion support."
+    ],
+    "rules": [
+      { "name": "The Signal Color Rule", "body": "Cyan, magenta, coral, and violet communicate action, state, or structure. Never spread them across large glowing text fields.", "section": "colors" },
+      { "name": "The Edge Match Rule", "body": "Night Ink must meet the dark edge of the Crab Nebula without a visible frame or recoloring the artwork.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Bricolage Grotesque makes the impression; Atkinson Hyperlegible carries information. Do not introduce a third type family.", "section": "typography" },
+      { "name": "The Label Restraint Rule", "body": "Uppercase tracked text is reserved for navigation, actions, and short labels. It is forbidden for sentences or body copy.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "Surfaces stay flush and border-led. Never add ambient drop shadows, glass blur, or decorative elevation.", "section": "elevation" },
+      { "name": "The One Glow Rule", "body": "Glow belongs to a small signal node, never to headings, panels, imagery, or entire actions.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do make Tate's accounting internship intent understandable within ten seconds.",
+      "Do use the actual tokens in src/styles/tokens.css.",
+      "Do preserve semantic HTML, WCAG AA contrast, visible focus, 48px interactive targets, descriptive alt text, and reduced-motion behavior.",
+      "Do keep production imagery under src/assets/, load the hero eagerly, and show a visible NASA credit."
+    ],
+    "donts": [
+      "Don't communicate personal opinions, thought leadership, lifestyle commentary, or unsupported claims.",
+      "Don't imply experience, outcomes, ownership, employers, projects, or metrics Tate cannot substantiate.",
+      "Don't add Thoughts, Consulting, or Now to the visible navigation.",
+      "Don't literalize a Japanese streetscape, vaporwave sun, Tron landscape, or cyberpunk environment.",
+      "Don't add decorative Japanese characters, yellow, green, glassmorphism, gradient text, excessive glow, or effects that reduce recruiter clarity.",
+      "Don't hardcode page-level color, font-size, spacing, or radius values outside src/styles/tokens.css."
+    ]
+  }
+}

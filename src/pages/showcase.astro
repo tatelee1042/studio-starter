@@ -1,306 +1,345 @@
 ---
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import crabNebula from '../assets/site/crab-nebula-chandra-ixpe.jpg';
 
 const colors = [
-  ['--color-bg', 'Background', 'page background'],
-  ['--color-bg-subtle', 'Background subtle', 'cards, panels'],
-  ['--color-text', 'Text', 'headings, body'],
-  ['--color-text-secondary', 'Text secondary', 'supporting copy'],
-  ['--color-border', 'Border', 'dividers, outlines'],
-  ['--color-accent', 'Accent', 'links, highlights'],
-  ['--color-accent-hover', 'Accent hover', 'hover states'],
+  ['night-ink', '--color-night-ink', 'Night Ink', 'page background'],
+  ['electric-cyan', '--color-electric-cyan', 'Electric Cyan', 'primary action and active state'],
+  ['transit-magenta', '--color-transit-magenta', 'Transit Magenta', 'secondary action and direction'],
+  ['signal-coral', '--color-signal-coral', 'Signal Coral', 'focus and status'],
+  ['deep-violet', '--color-deep-violet', 'Deep Violet', 'supporting depth'],
+  ['cloud-white', '--color-cloud-white', 'Cloud White', 'primary text'],
+  ['cloud-dim', '--color-cloud-dim', 'Cloud Dim', 'supporting text'],
+  ['night-raised', '--color-night-raised', 'Night Raised', 'closing surface'],
+  ['night-border', '--color-night-border', 'Night Border', 'rules and outlines'],
+  ['scanline', '--color-scanline', 'Scanline', 'hero texture'],
 ];
 
-const sizes = ['--text-sm', '--text-base', '--text-lg', '--text-xl', '--text-2xl', '--text-3xl'];
+const semanticColors = [
+  ['--color-bg', 'Background', '--color-night-ink'],
+  ['--color-bg-subtle', 'Subtle background', '--color-night-raised'],
+  ['--color-text', 'Primary text', '--color-cloud-white'],
+  ['--color-text-secondary', 'Secondary text', '--color-cloud-dim'],
+  ['--color-border', 'Border', '--color-night-border'],
+  ['--color-accent', 'Accent', '--color-electric-cyan'],
+  ['--color-accent-hover', 'Accent hover', '--color-transit-magenta'],
+  ['--color-action-primary', 'Primary action', '--color-electric-cyan'],
+  ['--color-action-secondary', 'Secondary action', '--color-transit-magenta'],
+  ['--color-focus', 'Focus', '--color-signal-coral'],
+];
 
-const spaces = ['--space-2xs', '--space-xs', '--space-sm', '--space-md', '--space-lg', '--space-xl', '--space-2xl'];
+const typeSizes = [
+  ['text-xs', '--text-xs'],
+  ['text-sm', '--text-sm'],
+  ['text-base', '--text-base'],
+  ['text-lg', '--text-lg'],
+  ['text-xl', '--text-xl'],
+  ['text-2xl', '--text-2xl'],
+  ['text-3xl', '--text-3xl'],
+  ['text-section', '--text-section'],
+  ['text-hero', '--text-hero'],
+];
+
+const leading = [
+  ['leading-display', '--leading-display'],
+  ['leading-tight', '--leading-tight'],
+  ['leading-normal', '--leading-normal'],
+  ['leading-loose', '--leading-loose'],
+];
+
+const tracking = [
+  ['tracking-body', '--tracking-body'],
+  ['tracking-brand', '--tracking-brand'],
+  ['tracking-display', '--tracking-display'],
+  ['tracking-caps', '--tracking-caps'],
+];
+
+const spacing = [
+  ['space-none', '--space-none'],
+  ['space-2xs', '--space-2xs'],
+  ['space-xs', '--space-xs'],
+  ['space-sm', '--space-sm'],
+  ['space-md', '--space-md'],
+  ['space-lg', '--space-lg'],
+  ['space-xl', '--space-xl'],
+  ['space-2xl', '--space-2xl'],
+  ['space-3xl', '--space-3xl'],
+];
 
 const radii = [
-  ['--radius-sm', 'buttons, inputs, tags'],
-  ['--radius-md', 'cards, containers'],
+  ['radius-sm', '--radius-sm', 'small details'],
+  ['radius-md', '--radius-md', 'available container radius'],
+  ['radius-action', '--radius-action', 'outlined actions'],
+];
+
+const layoutTokens = [
+  ['--max-width-page', 'Centered site frame'],
+  ['--page-gutter', 'Responsive safe-area gutter'],
+  ['--measure-body', 'Long-form reading measure'],
+  ['--measure-hero', 'Hero heading measure'],
+  ['--measure-caption', 'Image credit measure'],
+  ['--measure-compact', 'Compact supporting copy'],
+  ['--hero-min-height', 'Desktop hero minimum height'],
+  ['--hero-art-max', 'Hero artwork maximum width'],
 ];
 
 const navSections = [
-  ['Foundations', [['#color', 'Color'], ['#typography', 'Typography'], ['#spacing', 'Spacing']]],
-  ['Attributes', [['#radius', 'Radius']]],
-  ['Components', [['#component-nav', 'Nav Link'], ['#component-list', 'List Row']]],
+  ['Foundations', [['#colors', 'Colors'], ['#typography', 'Typography'], ['#spacing', 'Spacing'], ['#shape', 'Shape'], ['#layout', 'Layout'], ['#motion', 'Motion']]],
+  ['Components', [['#actions', 'Actions'], ['#text-link', 'Text Link'], ['#navigation', 'Navigation'], ['#hero', 'Hero'], ['#evidence', 'Evidence'], ['#closing', 'Closing'], ['#footer', 'Footer']]],
 ];
 ---
 
-<Base title="Design System — Showcase">
+<Base title="Neon Descent — Design System Showcase">
   <div class="ds-layout">
     <nav class="ds-nav" aria-label="Design system contents">
       {navSections.map(([group, links]) => (
         <div>
           <p class="ds-nav-label">{group}</p>
           <ul>
-            {links.map(([href, label]) => (
-              <li><a href={href}>{label}</a></li>
-            ))}
+            {links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
           </ul>
         </div>
       ))}
     </nav>
 
-    <article>
-      <header>
-        <h1>Your Design System</h1>
-        <p class="ds-intro">
-          This page reads directly from <code>src/styles/tokens.css</code>. Change a token,
-          refresh, and your whole system updates at once. When you build a new reusable
-          component, add a demo of it to the Components section here — that's a house rule.
-        </p>
+    <article class="ds-content">
+      <header class="ds-header">
+        <p class="ds-kicker">Neon Descent</p>
+        <h1>Design system showcase</h1>
+        <p>This page renders the implemented homepage and shared-shell system directly from <code>src/styles/tokens.css</code>.</p>
       </header>
 
-      <section id="color">
-        <h2>Color</h2>
-        <table class="ds-table">
-          <thead>
-            <tr><th></th><th>Token</th><th>Role</th><th>Used for</th></tr>
-          </thead>
-          <tbody>
-            {colors.map(([token, role, use]) => (
-              <tr>
-                <td><span class="ds-chip" style={`background: var(${token})`}></span></td>
-                <td><code>{token}</code></td>
-                <td>{role}</td>
-                <td class="ds-use">{use}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <section id="colors" class="ds-section">
+        <h2>Colors</h2>
+        <p class="ds-note">Primitive colors define the palette. Semantic aliases define how the interface uses it.</p>
+        <div class="ds-swatch-grid">
+          {colors.map(([className, token, name, use]) => (
+            <article class="ds-swatch">
+              <div class:list={['ds-swatch-color', `ds-color-${className}`]}></div>
+              <h3>{name}</h3>
+              <code>{token}</code>
+              <p>{use}</p>
+            </article>
+          ))}
+        </div>
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead><tr><th>Semantic token</th><th>Role</th><th>Maps to</th></tr></thead>
+            <tbody>
+              {semanticColors.map(([token, role, primitive]) => <tr><td><code>{token}</code></td><td>{role}</td><td><code>{primitive}</code></td></tr>)}
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <section id="typography">
+      <section id="typography" class="ds-section">
         <h2>Typography</h2>
-        <p class="ds-note">Display font for impression, body font for information. Both set in <code>tokens.css</code>.</p>
-        <div class="ds-type-scale">
-          {sizes.map((token) => (
-            <div class="ds-type-row">
-              <code>{token}</code>
-              <p class="ds-type-sample" style={`font-size: var(${token})`}>The quick brown fox</p>
-            </div>
+        <div class="ds-font-grid">
+          <article class="ds-font ds-font-display"><p>Bricolage Grotesque</p><code>--font-display</code></article>
+          <article class="ds-font ds-font-body"><p>Atkinson Hyperlegible</p><code>--font-body</code></article>
+        </div>
+        <h3 class="ds-subhead">Size scale</h3>
+        <div class="ds-token-stack">
+          {typeSizes.map(([className, token]) => (
+            <div class="ds-type-row"><code>{token}</code><p class:list={['ds-type-sample', `ds-${className}`]}>Tate Lee</p></div>
           ))}
         </div>
+        <div class="ds-attribute-grid">
+          <div>
+            <h3>Line height</h3>
+            {leading.map(([className, token]) => <p class:list={['ds-attribute-sample', `ds-${className}`]}><code>{token}</code> Clear information for recruiters.</p>)}
+          </div>
+          <div>
+            <h3>Tracking</h3>
+            {tracking.map(([className, token]) => <p class:list={['ds-attribute-sample', `ds-${className}`]}><code>{token}</code> TATE LEE</p>)}
+          </div>
+        </div>
+        <p class="ds-weight-display"><code>--weight-display</code> Display weight 600</p>
+        <p class="ds-weight-label"><code>--weight-label</code> Label weight 700</p>
       </section>
 
-      <section id="spacing">
+      <section id="spacing" class="ds-section">
         <h2>Spacing</h2>
-        <div class="ds-space-scale">
-          {spaces.map((token) => (
-            <div class="ds-space-row">
-              <code>{token}</code>
-              <div class="ds-space-bar" style={`width: var(${token})`}></div>
-            </div>
+        <div class="ds-token-stack">
+          {spacing.map(([className, token]) => (
+            <div class="ds-space-row"><code>{token}</code><div class:list={['ds-space-bar', `ds-${className}`]}></div></div>
           ))}
         </div>
       </section>
 
-      <section id="radius">
-        <h2>Radius</h2>
+      <section id="shape" class="ds-section">
+        <h2>Shape and focus</h2>
         <div class="ds-radius-grid">
-          {radii.map(([token, use]) => (
-            <figure class="ds-radius-card">
-              <div class="ds-radius-demo" style={`border-radius: var(${token})`}></div>
-              <figcaption>
-                <code>{token}</code>
-                <span class="ds-use">{use}</span>
-              </figcaption>
-            </figure>
+          {radii.map(([className, token, use]) => (
+            <article><div class:list={['ds-radius-demo', `ds-${className}`]}></div><code>{token}</code><p>{use}</p></article>
           ))}
+          <article><button class="ds-focus-demo">Focus me</button><code>--focus-ring-width</code><p>global keyboard focus</p></article>
         </div>
       </section>
 
-      <section id="component-nav">
-        <h2>Nav Link</h2>
-        <div class="ds-demo">
-          <a href="#component-nav" class="nav-name" style="margin-right: var(--space-lg);">Tate Lee</a>
-          <a href="#component-nav">Work</a>
+      <section id="layout" class="ds-section">
+        <h2>Layout</h2>
+        <p class="ds-note">All pages use the centered frame and mobile-first composition. The homepage changes layout at 48rem.</p>
+        <div class="ds-table-wrap">
+          <table class="ds-table"><thead><tr><th>Token</th><th>Purpose</th></tr></thead><tbody>{layoutTokens.map(([token, purpose]) => <tr><td><code>{token}</code></td><td>{purpose}</td></tr>)}</tbody></table>
         </div>
-        <p class="ds-note">The site header pieces, live from <code>global.css</code>.</p>
+        <div class="ds-measure-demo"><p>Readable body measure uses <code>--measure-body</code>. Compact copy, captions, hero headings, and artwork each have their own named constraint.</p></div>
       </section>
 
-      <section id="component-list">
-        <h2>List Row</h2>
-        <div class="ds-demo">
-          <p style="margin: 0;"><a href="#component-list">First Project</a></p>
-          <p class="ds-use" style="margin: 0;">One line about this project.</p>
+      <section id="motion" class="ds-section">
+        <h2>Motion and elevation</h2>
+        <div class="ds-motion-demo"><span></span><p><code>--duration-fast</code> and <code>--ease-out</code> drive brief state feedback. Reduced-motion preferences remove transitions.</p></div>
+        <p class="ds-note">The system is flat. The only shadow is the coral signal glow shown here and in the closing action.</p>
+      </section>
+
+      <section id="actions" class="ds-section">
+        <h2>Primary and secondary actions</h2>
+        <div class="ds-demo ds-action-row"><a class="ds-action ds-action-primary" href="mailto:tatelee2024@gmail.com">Email me</a><a class="ds-action ds-action-secondary" href="/work/">View work</a></div>
+        <p class="ds-note">Nearly square outlined actions invert to their signal color. Both preserve a minimum 48px target.</p>
+      </section>
+
+      <section id="text-link" class="ds-section">
+        <h2>Text link</h2>
+        <div class="ds-demo"><a class="ds-text-link" href="/about/">Read about my background <span aria-hidden="true">→</span></a></div>
+        <p class="ds-note">Compact route label with a magenta directional arrow.</p>
+      </section>
+
+      <section id="navigation" class="ds-section">
+        <h2>Shared navigation</h2>
+        <div class="ds-demo"><nav class="ds-site-nav" aria-label="Navigation example"><a class="ds-wordmark" href="/">Tate Lee</a><div class="ds-nav-links"><a href="/" aria-current="page">Home</a><a href="/work/">Work</a><a href="/about/">About</a></div></nav></div>
+        <p class="ds-note">Wordmark left, recruiter routes right, and a cyan rule for the current page.</p>
+      </section>
+
+      <section id="hero" class="ds-section">
+        <h2>Hero</h2>
+        <div class="ds-hero-demo">
+          <div><p class="ds-kicker">Accounting + Japanese</p><h3>Business, accounting, and Japanese.</h3><p>I’m Tate Lee, a student seeking an accounting internship.</p></div>
+          <figure><Image src={crabNebula} alt="The Crab Nebula's purple pulsar wind glowing inside blue and red filaments" loading="lazy" widths={[480, 720]} sizes="(min-width: 48rem) 38vw, 100vw" /><figcaption>NASA Chandra, IXPE, and Hubble composite.</figcaption></figure>
         </div>
-        <p class="ds-note">The work-index row pattern. As you build new components, add each one here as its own section.</p>
+        <p class="ds-note">Direct recruiter copy and unframed, edge-matched cosmic artwork.</p>
+      </section>
+
+      <section id="evidence" class="ds-section">
+        <h2>Evidence band</h2>
+        <ol class="ds-evidence-list"><li><span>01</span><h3>Accounting focus</h3><p>Studying business with a focus in accounting.</p></li><li><span>02</span><h3>Japanese double major</h3><p>Building language skills alongside a business education.</p></li><li><span>03</span><h3>Internship goal</h3><p>Seeking an opportunity to apply my accounting studies in a professional setting.</p></li></ol>
+        <p class="ds-note">Only factual, approved evidence belongs in this ordered band.</p>
+      </section>
+
+      <section id="closing" class="ds-section">
+        <h2>Closing action</h2>
+        <div class="ds-closing"><span class="ds-signal" aria-hidden="true"></span><div><h3>I’m seeking an accounting internship.</h3><p>If my background fits an opportunity on your team, I’d be glad to continue the conversation.</p></div><a class="ds-action ds-action-primary" href="mailto:tatelee2024@gmail.com">Email me</a></div>
+        <p class="ds-note">The homepage’s direct recruiter conversion point.</p>
+      </section>
+
+      <section id="footer" class="ds-section">
+        <h2>Shared footer</h2>
+        <div class="ds-demo ds-footer-demo"><div class="footer-primary"><p class="footer-status"><span aria-hidden="true"></span>Seeking an accounting internship</p><nav class="footer-nav" aria-label="Footer example"><a href="/">Home</a><a href="/work/">Work</a><a href="/about/">About</a></nav></div><p class="footer-credit">© 2026 Tate Lee</p></div>
+        <p class="ds-note">Availability, repeated navigation, and quiet ownership close every page.</p>
       </section>
     </article>
   </div>
 </Base>
 
 <style>
-  .ds-layout {
-    display: grid;
-    grid-template-columns: 160px minmax(0, 1fr);
-    gap: var(--space-xl);
-    align-items: start;
+  .ds-layout { display: grid; gap: var(--space-xl); align-items: start; }
+  .ds-nav { display: flex; gap: var(--space-lg); overflow-x: auto; padding: var(--space-md) 0; }
+  .ds-nav > div { flex: none; }
+  .ds-nav-label, .ds-kicker { margin: 0 0 var(--space-xs); color: var(--color-accent); font-size: var(--text-xs); font-weight: var(--weight-label); letter-spacing: var(--tracking-caps); text-transform: uppercase; }
+  .ds-nav ul { list-style: none; display: grid; gap: var(--space-2xs); margin: 0; padding: 0; }
+  .ds-nav a { font-size: var(--text-sm); text-decoration: none; }
+  .ds-content { min-width: 0; }
+  .ds-header { padding: var(--space-xl) 0 var(--space-lg); }
+  .ds-header h1 { margin: 0 0 var(--space-md); font-size: var(--text-section); letter-spacing: var(--tracking-display); }
+  .ds-header > p:last-child, .ds-note { max-width: var(--measure-body); color: var(--color-text-secondary); }
+  .ds-section { margin-top: var(--space-2xl); }
+  .ds-section > h2 { margin: 0 0 var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); font-size: var(--text-2xl); }
+  .ds-subhead { margin: var(--space-xl) 0 var(--space-md); }
+  .ds-swatch-grid, .ds-font-grid, .ds-radius-grid { display: grid; gap: var(--space-md); }
+  .ds-swatch { display: grid; gap: var(--space-xs); margin: 0; }
+  .ds-swatch h3, .ds-swatch p, .ds-radius-grid p { margin: 0; }
+  .ds-swatch p, .ds-radius-grid p, code { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .ds-swatch-color { height: var(--space-xl); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+  .ds-color-night-ink { background: var(--color-night-ink); }
+  .ds-color-electric-cyan { background: var(--color-electric-cyan); }
+  .ds-color-transit-magenta { background: var(--color-transit-magenta); }
+  .ds-color-signal-coral { background: var(--color-signal-coral); }
+  .ds-color-deep-violet { background: var(--color-deep-violet); }
+  .ds-color-cloud-white { background: var(--color-cloud-white); }
+  .ds-color-cloud-dim { background: var(--color-cloud-dim); }
+  .ds-color-night-raised { background: var(--color-night-raised); }
+  .ds-color-night-border { background: var(--color-night-border); }
+  .ds-color-scanline { background: var(--color-scanline); }
+  .ds-table-wrap { margin-top: var(--space-lg); overflow-x: auto; }
+  .ds-table { width: 100%; border-collapse: collapse; }
+  .ds-table th, .ds-table td { padding: var(--space-sm) var(--space-md) var(--space-sm) 0; border-bottom: 1px solid var(--color-border); text-align: left; }
+  .ds-font { padding: var(--space-lg); border: 1px solid var(--color-border); background: var(--color-bg-subtle); }
+  .ds-font p { margin: 0 0 var(--space-sm); font-size: var(--text-xl); }
+  .ds-font-display p { font-family: var(--font-display); font-weight: var(--weight-display); }
+  .ds-font-body p { font-family: var(--font-body); }
+  .ds-token-stack { display: grid; }
+  .ds-type-row, .ds-space-row { display: grid; grid-template-columns: var(--space-3xl) minmax(0, 1fr); gap: var(--space-md); align-items: center; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+  .ds-type-sample { margin: 0; font-family: var(--font-display); line-height: var(--leading-tight); overflow-wrap: anywhere; }
+  .ds-text-xs { font-size: var(--text-xs); } .ds-text-sm { font-size: var(--text-sm); } .ds-text-base { font-size: var(--text-base); } .ds-text-lg { font-size: var(--text-lg); } .ds-text-xl { font-size: var(--text-xl); } .ds-text-2xl { font-size: var(--text-2xl); } .ds-text-3xl { font-size: var(--text-3xl); } .ds-text-section { font-size: var(--text-section); } .ds-text-hero { font-size: var(--text-hero); }
+  .ds-attribute-grid { display: grid; gap: var(--space-xl); margin-top: var(--space-xl); }
+  .ds-attribute-sample { padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-border); }
+  .ds-attribute-sample code { display: block; margin-bottom: var(--space-xs); }
+  .ds-leading-display { line-height: var(--leading-display); } .ds-leading-tight { line-height: var(--leading-tight); } .ds-leading-normal { line-height: var(--leading-normal); } .ds-leading-loose { line-height: var(--leading-loose); }
+  .ds-tracking-body { letter-spacing: var(--tracking-body); } .ds-tracking-brand { letter-spacing: var(--tracking-brand); } .ds-tracking-display { letter-spacing: var(--tracking-display); } .ds-tracking-caps { letter-spacing: var(--tracking-caps); }
+  .ds-weight-display { font-weight: var(--weight-display); } .ds-weight-label { font-weight: var(--weight-label); }
+  .ds-space-bar { height: var(--space-sm); background: var(--color-accent); border-radius: var(--radius-sm); }
+  .ds-space-none { width: var(--space-none); } .ds-space-2xs { width: var(--space-2xs); } .ds-space-xs { width: var(--space-xs); } .ds-space-sm { width: var(--space-sm); } .ds-space-md { width: var(--space-md); } .ds-space-lg { width: var(--space-lg); } .ds-space-xl { width: var(--space-xl); } .ds-space-2xl { width: var(--space-2xl); } .ds-space-3xl { width: var(--space-3xl); }
+  .ds-radius-grid article { display: grid; gap: var(--space-xs); }
+  .ds-radius-demo { height: var(--space-2xl); border: 1px solid var(--color-border); background: var(--color-bg-subtle); }
+  .ds-radius-sm { border-radius: var(--radius-sm); } .ds-radius-md { border-radius: var(--radius-md); } .ds-radius-action { border-radius: var(--radius-action); }
+  .ds-focus-demo { min-height: var(--space-xl); padding: var(--space-sm) var(--space-lg); border: 1px solid var(--color-action-primary); border-radius: var(--radius-action); color: var(--color-action-primary); background: transparent; font: inherit; }
+  .ds-focus-demo:focus-visible { outline: var(--focus-ring-width) solid var(--color-focus); outline-offset: var(--space-2xs); }
+  .ds-measure-demo { max-width: var(--measure-body); margin-top: var(--space-lg); padding: var(--space-lg); border: 1px solid var(--color-border); }
+  .ds-measure-demo p { margin: 0; }
+  .ds-motion-demo { display: flex; align-items: center; gap: var(--space-lg); }
+  .ds-motion-demo span, .ds-signal { flex: none; width: var(--space-sm); height: var(--space-sm); border-radius: 50%; background: var(--color-focus); box-shadow: 0 0 var(--space-md) var(--color-focus); transition: transform var(--duration-fast) var(--ease-out); }
+  .ds-motion-demo:hover span { transform: scale(1.5); }
+  .ds-demo { padding: var(--space-lg); border: 1px solid var(--color-border); background: var(--color-bg-subtle); }
+  .ds-action-row { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .ds-action { min-height: var(--space-xl); display: inline-flex; align-items: center; justify-content: center; padding: var(--space-sm) var(--space-lg); border: 1px solid; border-radius: var(--radius-action); font-size: var(--text-sm); font-weight: var(--weight-label); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
+  .ds-action-primary { color: var(--color-action-primary); border-color: var(--color-action-primary); } .ds-action-primary:hover, .ds-action-primary:focus-visible { color: var(--color-bg); background: var(--color-action-primary); }
+  .ds-action-secondary { color: var(--color-action-secondary); border-color: var(--color-action-secondary); } .ds-action-secondary:hover, .ds-action-secondary:focus-visible { color: var(--color-bg); background: var(--color-action-secondary); }
+  .ds-text-link { min-height: var(--space-xl); display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-accent); font-size: var(--text-sm); font-weight: var(--weight-label); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; }
+  .ds-text-link span { color: var(--color-action-secondary); transition: transform var(--duration-fast) var(--ease-out); } .ds-text-link:hover span, .ds-text-link:focus-visible span { transform: translateX(var(--space-2xs)); }
+  .ds-site-nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-lg); }
+  .ds-wordmark { font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-display); letter-spacing: var(--tracking-brand); text-transform: uppercase; text-decoration: none; }
+  .ds-nav-links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .ds-nav-links a { position: relative; min-height: var(--space-xl); display: inline-flex; align-items: center; font-size: var(--text-xs); font-weight: var(--weight-label); letter-spacing: var(--tracking-caps); text-transform: uppercase; text-decoration: none; }
+  .ds-nav-links a[aria-current='page']::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--color-accent); }
+  .ds-hero-demo { position: relative; display: grid; gap: var(--space-xl); align-items: center; padding: var(--space-xl); overflow: hidden; background: repeating-linear-gradient(to bottom, transparent 0, transparent var(--space-2xs), var(--color-scanline) var(--space-2xs), var(--color-scanline) calc(var(--space-2xs) + 1px)); border: 1px solid var(--color-border); }
+  .ds-hero-demo h3 { max-width: var(--measure-hero); margin: 0; font-size: var(--text-section); letter-spacing: var(--tracking-display); }
+  .ds-hero-demo > div > p:last-child { max-width: var(--measure-compact); color: var(--color-text-secondary); font-size: var(--text-lg); }
+  .ds-hero-demo figure { margin: 0; }
+  .ds-hero-demo img { display: block; width: 100%; height: auto; }
+  .ds-hero-demo figcaption { margin-top: var(--space-sm); color: var(--color-text-secondary); font-size: var(--text-xs); }
+  .ds-evidence-list { list-style: none; display: grid; margin: 0; padding: 0; border-bottom: 1px solid var(--color-border); }
+  .ds-evidence-list li { position: relative; display: grid; gap: var(--space-sm); padding: var(--space-lg) 0; border-top: 1px solid var(--color-border); }
+  .ds-evidence-list li::before { content: ''; position: absolute; top: -1px; left: 0; width: var(--space-xl); height: 1px; background: var(--color-accent); }
+  .ds-evidence-list li:nth-child(2)::before { background: var(--color-action-secondary); } .ds-evidence-list li:nth-child(3)::before { background: var(--color-focus); }
+  .ds-evidence-list span { color: var(--color-accent); font-size: var(--text-xs); font-weight: var(--weight-label); letter-spacing: var(--tracking-caps); }
+  .ds-evidence-list li:nth-child(2) span { color: var(--color-action-secondary); } .ds-evidence-list li:nth-child(3) span { color: var(--color-focus); }
+  .ds-evidence-list h3, .ds-evidence-list p { margin: 0; } .ds-evidence-list h3 { font-size: var(--text-xl); } .ds-evidence-list p { color: var(--color-text-secondary); }
+  .ds-closing { display: grid; gap: var(--space-lg); align-items: center; padding: var(--space-xl); border-block: 1px solid var(--color-border); background: var(--color-bg-subtle); }
+  .ds-closing h3, .ds-closing p { margin: 0; } .ds-closing h3 { font-size: var(--text-section); letter-spacing: var(--tracking-display); } .ds-closing p { max-width: var(--measure-compact); color: var(--color-text-secondary); }
+  .ds-footer-demo { display: grid; gap: var(--space-xl); }
+  .ds-footer-demo .footer-credit { margin: 0; color: var(--color-text-secondary); font-size: var(--text-sm); }
+  @media (min-width: 48rem) {
+    .ds-layout { grid-template-columns: var(--space-3xl) minmax(0, 1fr); }
+    .ds-nav { position: sticky; top: var(--space-lg); display: grid; overflow: visible; }
+    .ds-swatch-grid { grid-template-columns: repeat(auto-fit, minmax(var(--space-3xl), 1fr)); }
+    .ds-font-grid, .ds-attribute-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ds-radius-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .ds-hero-demo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ds-evidence-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ds-evidence-list li { padding-right: var(--space-lg); }
+    .ds-evidence-list li + li { padding-left: var(--space-lg); border-left: 1px solid var(--color-border); }
+    .ds-evidence-list li + li::before { left: var(--space-lg); }
+    .ds-closing { grid-template-columns: auto minmax(0, 1fr) auto; padding: var(--space-2xl) var(--space-xl); }
   }
-
-  .ds-nav {
-    position: sticky;
-    top: var(--space-lg);
-    display: grid;
-    gap: var(--space-lg);
-  }
-
-  .ds-nav-label {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-secondary);
-    margin: 0 0 var(--space-xs);
-  }
-
-  .ds-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: var(--space-2xs);
-  }
-
-  .ds-nav a {
-    font-size: var(--text-sm);
-    text-decoration: none;
-  }
-
-  h1 {
-    font-size: var(--text-2xl);
-    margin: 0 0 var(--space-sm);
-  }
-
-  .ds-intro {
-    color: var(--color-text-secondary);
-    max-width: 40em;
-    margin: 0;
-  }
-
-  section {
-    margin-top: var(--space-xl);
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    margin: 0 0 var(--space-sm);
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--color-border);
-  }
-
-  code {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-
-  .ds-note,
-  .ds-use {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-
-  .ds-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  .ds-table th {
-    font-size: var(--text-sm);
-    text-align: left;
-    padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .ds-table td {
-    padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: var(--text-sm);
-  }
-
-  .ds-chip {
-    display: block;
-    width: var(--space-xl);
-    height: var(--space-lg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-  }
-
-  .ds-type-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: baseline;
-    gap: var(--space-md);
-    padding: var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .ds-type-sample {
-    margin: 0;
-    line-height: var(--leading-tight);
-  }
-
-  .ds-space-scale {
-    display: grid;
-    gap: var(--space-xs);
-  }
-
-  .ds-space-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: center;
-    gap: var(--space-md);
-  }
-
-  .ds-space-bar {
-    height: var(--space-sm);
-    background: var(--color-accent);
-    border-radius: var(--radius-sm);
-  }
-
-  .ds-radius-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: var(--space-lg);
-  }
-
-  .ds-radius-card {
-    margin: 0;
-    display: grid;
-    gap: var(--space-xs);
-  }
-
-  .ds-radius-demo {
-    height: var(--space-2xl);
-    background: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-  }
-
-  .ds-radius-card figcaption {
-    display: grid;
-  }
-
-  .ds-demo {
-    padding: var(--space-lg);
-    background: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-    margin-bottom: var(--space-xs);
-  }
-
-  @media (max-width: 640px) {
-    .ds-layout {
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-    }
-
-    .ds-nav {
-      position: static;
-      grid-auto-flow: column;
-      justify-content: start;
-      gap: var(--space-lg);
-      overflow-x: auto;
-    }
-  }
+  @media (prefers-reduced-motion: reduce) { .ds-motion-demo span, .ds-action, .ds-text-link span { transition: none; } }
 </style>

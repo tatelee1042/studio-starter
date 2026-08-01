@@ -1,49 +1,82 @@
-/*
-  Design tokens — the single source of truth.
-  Every color, font size, and space on this site comes from here.
-  Change these values and the whole site changes with them.
-
-  Week 2: replace these neutral defaults with YOUR design system.
-  See /showcase to watch your system take shape.
-*/
+/* Neon Descent tokens — the single source of truth. */
 :root {
-  /* color */
-  --color-bg:             #FFFFFF;
-  --color-bg-subtle:      #F5F5F4;
-  --color-text:           #1C1917;
-  --color-text-secondary: #57534E;
-  --color-border:         #D6D3D1;
-  --color-accent:         #491A69; /* Royal Plum */
-  --color-accent-hover:   #3A1554;
+  /* palette primitives */
+  --color-night-ink: #050507;
+  --color-electric-cyan: #35D9FF;
+  --color-transit-magenta: #FF4FB8;
+  --color-signal-coral: #FF6B57;
+  --color-deep-violet: #6246A8;
+  --color-cloud-white: #F4F1FF;
+  --color-cloud-dim: #B8B6C7;
+  --color-night-raised: #101329;
+  --color-night-border: #343750;
+  --color-scanline: #0D1024;
+
+  /* semantic color */
+  --color-bg: var(--color-night-ink);
+  --color-bg-subtle: var(--color-night-raised);
+  --color-text: var(--color-cloud-white);
+  --color-text-secondary: var(--color-cloud-dim);
+  --color-border: var(--color-night-border);
+  --color-accent: var(--color-electric-cyan);
+  --color-accent-hover: var(--color-transit-magenta);
+  --color-action-primary: var(--color-electric-cyan);
+  --color-action-secondary: var(--color-transit-magenta);
+  --color-focus: var(--color-signal-coral);
 
   /* typography */
-  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-body:    system-ui, -apple-system, sans-serif;
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
 
-  --text-sm:   0.875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-lg:   1.25rem;
-  --text-xl:   1.5rem;
-  --text-2xl:  2rem;
-  --text-3xl:  2.75rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-hero: clamp(3rem, 4.7vw, 4.5rem);
+  --text-section: clamp(2rem, 4vw, 3.5rem);
 
-  --leading-tight:  1.2;
+  --leading-display: 1.02;
+  --leading-tight: 1.2;
   --leading-normal: 1.5;
-  --leading-loose:  1.75;
+  --leading-loose: 1.75;
+  --tracking-body: 0.01em;
+  --tracking-brand: 0.04em;
+  --tracking-display: -0.035em;
+  --tracking-caps: 0.12em;
+  --weight-display: 600;
+  --weight-label: 700;
 
   /* spacing */
+  --space-none: 0;
   --space-2xs: 4px;
-  --space-xs:  8px;
-  --space-sm:  12px;
-  --space-md:  16px;
-  --space-lg:  24px;
-  --space-xl:  48px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
   --space-2xl: 96px;
+  --space-3xl: 128px;
 
   /* radius */
   --radius-sm: 4px;
   --radius-md: 8px;
+  --radius-action: 2px;
+  --focus-ring-width: 2px;
 
   /* layout */
-  --max-width-page: 1100px;
+  --max-width-page: 1536px;
+  --page-gutter: clamp(var(--space-md), 4.4vw, 4.25rem);
+  --measure-body: 65ch;
+  --measure-hero: 15ch;
+  --measure-caption: 58ch;
+  --measure-compact: 42ch;
+  --hero-min-height: 42rem;
+  --hero-art-max: 42rem;
+
+  /* effects and interaction */
+  --duration-fast: 160ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
